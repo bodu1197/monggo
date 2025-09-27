@@ -89,47 +89,43 @@ export default function CategoryList() {
   }
 
   return (
-    <div>
+    <>
+      {/* Parent Category Dropdown */}
+      <div className="flex-1 min-w-[150px]">
 
-      <div className="flex flex-wrap gap-4">
-        {/* Parent Category Dropdown */}
-        <div className="flex-1 min-w-[150px]">
-
-          <select
-            id="category"
-            className="w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent md:shadow-inner md:border md:border-gray-300 md:rounded"
-            onChange={handleParentCategoryChange}
-            value={selectedParentCategory || ''}
-          >
-            <option value="">Pilih Kategori Utama</option>
-            {categories.map((category) => (
-              <option key={category.id} value={category.id}>
-                {category.name}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        {/* Subcategory Dropdown */}
-        <div className="flex-1 min-w-[150px]">
-
-          <select
-            id="subcategory"
-            className="w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent md:shadow-inner md:border md:border-gray-300 md:rounded"
-            onChange={handleSubCategoryChange}
-            value={selectedSubCategory || ''}
-            disabled={!selectedParentCategory || subcategories.length === 0}
-          >
-            <option value="">Pilih Subkategori</option>
-            {subcategories.map((subcategory) => (
-              <option key={subcategory.id} value={subcategory.id}>
-                {subcategory.name}
-              </option>
-            ))}
-          </select>
-        </div>
+        <select
+          id="category"
+          className="w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent md:shadow-inner md:border md:border-gray-300 md:rounded"
+          onChange={handleParentCategoryChange}
+          value={selectedParentCategory || ''}
+        >
+          <option value="">Pilih Kategori Utama</option>
+          {categories.map((category) => (
+            <option key={category.id} value={category.id}>
+              {category.name}
+            </option>
+          ))}
+        </select>
       </div>
 
-    </div>
+      {/* Subcategory Dropdown */}
+      <div className="flex-1 min-w-[150px]">
+
+        <select
+          id="subcategory"
+          className="w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent md:shadow-inner md:border md:border-gray-300 md:rounded"
+          onChange={handleSubCategoryChange}
+          value={selectedSubCategory || ''}
+          disabled={!selectedParentCategory || subcategories.length === 0}
+        >
+          <option value="">Pilih Subkategori</option>
+          {subcategories.map((subcategory) => (
+            <option key={subcategory.id} value={subcategory.id}>
+              {subcategory.name}
+            </option>
+          ))}
+        </select>
+      </div>
+    </>
   );
 }

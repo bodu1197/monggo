@@ -139,68 +139,59 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center"> {/* Removed justify-center to allow content to flow */}
       <div className="w-full max-w-7xl">
-        <div className="flex flex-wrap items-start gap-6">
-          {/* Location Selector Group */}
-          <div className="flex-1">
-
-            <div className="flex flex-wrap gap-4">
-              <div className="flex-1 min-w-[150px]">
-
-                <select
-                  id="province"
-                  className="shadow-inner border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                  onChange={handleProvinceChange}
-                  value={selectedProvinceId || ''}
-                >
-                  <option value="">Pilih Provinsi</option>
-                  {provinces.map((province) => (
-                    <option key={province.province_id} value={province.province_id}>
-                      {province.province_name} {province.province_code ? `(${province.province_code})` : ''}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="flex-1 min-w-[150px]">
-
-                <select
-                  id="regency"
-                  className="shadow-inner border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                  onChange={handleRegencyChange}
-                  value={selectedRegencyId || ''}
-                  disabled={!selectedProvinceId}
-                >
-                  <option value="">Pilih Kabupaten/Kota</option>
-                  {regencies.map((regency) => (
-                    <option key={regency.regency_id} value={regency.regency_id}>
-                      {regency.regency_name} {regency.regency_type || regency.regency_code ? `(${regency.regency_type || ''}${regency.regency_type && regency.regency_code ? ', ' : ''}${regency.regency_code || ''})` : ''}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="flex-1 min-w-[150px]">
-
-                <select
-                  id="district"
-                  className="shadow-inner border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                  onChange={handleDistrictChange}
-                  value={selectedDistrictId || ''}
-                  disabled={!selectedRegencyId}
-                >
-                  <option value="">Pilih Kecamatan</option>
-                  {districts.map((district) => (
-                    <option key={district.district_id} value={district.district_id}>
-                      {district.district_name} {district.district_code ? `(${district.district_code})` : ''}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
+        <div className="flex flex-wrap justify-between gap-4 mt-5"> {/* Added justify-between and mt-5, adjusted gap */}
+          {/* Province Dropdown */}
+          <div className="flex-1 min-w-[150px]">
+            <select
+              id="province"
+              className="shadow-inner border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              onChange={handleProvinceChange}
+              value={selectedProvinceId || ''}
+            >
+              <option value="">Pilih Provinsi</option>
+              {provinces.map((province) => (
+                <option key={province.province_id} value={province.province_id}>
+                  {province.province_name} {province.province_code ? `(${province.province_code})` : ''}
+                </option>
+              ))}
+            </select>
           </div>
-
-          {/* Category Selector Group */}
-          <div className="flex-1">
-            <CategoryList />
+          {/* Regency Dropdown */}
+          <div className="flex-1 min-w-[150px]">
+            <select
+              id="regency"
+              className="shadow-inner border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              onChange={handleRegencyChange}
+              value={selectedRegencyId || ''}
+              disabled={!selectedProvinceId}
+            >
+              <option value="">Pilih Kabupaten/Kota</option>
+              {regencies.map((regency) => (
+                <option key={regency.regency_id} value={regency.regency_id}>
+                  {regency.regency_name} {regency.regency_type || regency.regency_code ? `(${regency.regency_type || ''}${regency.regency_type && regency.regency_code ? ', ' : ''}${regency.regency_code || ''})` : ''}
+                </option>
+              ))}
+            </select>
           </div>
+          {/* District Dropdown */}
+          <div className="flex-1 min-w-[150px]">
+            <select
+              id="district"
+              className="shadow-inner border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              onChange={handleDistrictChange}
+              value={selectedDistrictId || ''}
+              disabled={!selectedRegencyId}
+            >
+              <option value="">Pilih Kecamatan</option>
+              {districts.map((district) => (
+                <option key={district.district_id} value={district.district_id}>
+                  {district.district_name} {district.district_code ? `(${district.district_code})` : ''}
+                </option>
+              ))}
+            </select>
+          </div>
+          {/* Category and Subcategory Dropdowns (from CategoryList component) */}
+          <CategoryList /> {/* CategoryList now returns the two dropdowns directly */}
         </div>
       </div>
 
