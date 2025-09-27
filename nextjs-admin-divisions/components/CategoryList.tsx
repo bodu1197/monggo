@@ -81,7 +81,7 @@ export default function CategoryList() {
   };
 
   if (loading) {
-    return <div className="w-full bg-white shadow-md rounded-lg p-4 mb-6 text-center">Loading categories...</div>;
+    return <div className="w-full bg-white shadow-md rounded-lg p-4 mb-6 text-center min-h-[96px]">Loading categories...</div>;
   }
 
   if (error) {
