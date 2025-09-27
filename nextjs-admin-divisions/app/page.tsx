@@ -138,7 +138,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center"> {/* Removed justify-center to allow content to flow */}
-      <div className="w-full max-w-7xl">
+      <div className="w-full max-w-7xl px-[5px] md:px-0">
         <div className="flex flex-wrap justify-between gap-4 mt-5"> {/* Added justify-between and mt-5, adjusted gap */}
           <div className="w-full md:flex-1 min-w-[150px]">
             <select
