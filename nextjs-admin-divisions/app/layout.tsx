@@ -22,7 +22,7 @@ export default async function RootLayout({
     <html lang="id">
       <body>
         <SessionProviderWrapper session={session}>
-          <div className="min-h-screen flex flex-col px-0.5 md:px-6">
+          <div className="min-h-screen flex flex-col">
             <Header /> {/* Use the imported Header component */}
             <main className="flex-grow bg-gray-50">
               {children}
