@@ -90,16 +90,14 @@ export default function CategoryList() {
 
   return (
     <>
-      {/* Parent Category Dropdown */}
-      <div className="flex-1 min-w-[150px]">
+      <div className="w-full md:flex-1 min-w-[150px]">
 
-        <select
-          id="category"
-          className="w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent md:shadow-inner md:border md:border-gray-300 md:rounded"
-          onChange={handleParentCategoryChange}
-          value={selectedParentCategory || ''}
-        >
-          <option value="">Pilih Kategori Utama</option>
+                  <select
+                    id="category"
+                    className="shadow-inner border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    onChange={handleParentCategoryChange}
+                    value={selectedParentCategory || ''}
+                  >          <option value="">Pilih Kategori Utama</option>
           {categories.map((category) => (
             <option key={category.id} value={category.id}>
               {category.name}
@@ -109,16 +107,15 @@ export default function CategoryList() {
       </div>
 
       {/* Subcategory Dropdown */}
-      <div className="flex-1 min-w-[150px]">
+      <div className="w-full md:flex-1 min-w-[150px]">
 
-        <select
-          id="subcategory"
-          className="w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent md:shadow-inner md:border md:border-gray-300 md:rounded"
-          onChange={handleSubCategoryChange}
-          value={selectedSubCategory || ''}
-          disabled={!selectedParentCategory || subcategories.length === 0}
-        >
-          <option value="">Pilih Subkategori</option>
+                  <select
+                    id="subcategory"
+                    className="shadow-inner border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    onChange={handleSubCategoryChange}
+                    value={selectedSubCategory || ''}
+                    disabled={!selectedParentCategory || subcategories.length === 0}
+                  >          <option value="">Pilih Subkategori</option>
           {subcategories.map((subcategory) => (
             <option key={subcategory.id} value={subcategory.id}>
               {subcategory.name}

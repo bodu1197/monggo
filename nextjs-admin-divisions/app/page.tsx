@@ -140,8 +140,7 @@ export default function Home() {
     <div className="flex flex-col items-center"> {/* Removed justify-center to allow content to flow */}
       <div className="w-full max-w-7xl">
         <div className="flex flex-wrap justify-between gap-4 mt-5"> {/* Added justify-between and mt-5, adjusted gap */}
-          {/* Province Dropdown */}
-          <div className="flex-1 min-w-[150px]">
+          <div className="w-full md:flex-1 min-w-[150px]">
             <select
               id="province"
               className="shadow-inner border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
@@ -157,7 +156,7 @@ export default function Home() {
             </select>
           </div>
           {/* Regency Dropdown */}
-          <div className="flex-1 min-w-[150px]">
+          <div className="w-full md:flex-1 min-w-[150px]">
             <select
               id="regency"
               className="shadow-inner border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
@@ -174,7 +173,7 @@ export default function Home() {
             </select>
           </div>
           {/* District Dropdown */}
-          <div className="flex-1 min-w-[150px]">
+          <div className="w-full md:flex-1 min-w-[150px]">
             <select
               id="district"
               className="shadow-inner border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
