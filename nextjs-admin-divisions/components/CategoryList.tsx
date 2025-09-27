@@ -97,7 +97,7 @@ export default function CategoryList() {
 
           <select
             id="category"
-            className="shadow-inner border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            className="w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent md:shadow-inner md:border md:border-gray-300 md:rounded"
             onChange={handleParentCategoryChange}
             value={selectedParentCategory || ''}
           >
@@ -115,7 +115,7 @@ export default function CategoryList() {
 
           <select
             id="subcategory"
-            className="shadow-inner border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            className="w-full py-2 px-3 text-gray-800 leading-tight focus:ring-2 focus:ring-indigo-500 focus:border-transparent md:shadow-inner md:border md:border-gray-300 md:rounded"
             onChange={handleSubCategoryChange}
             value={selectedSubCategory || ''}
             disabled={!selectedParentCategory || subcategories.length === 0}
