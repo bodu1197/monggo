@@ -138,7 +138,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center"> {/* Removed justify-center to allow content to flow */}
-      <div className="w-full max-w-7xl md:bg-gray-100 md:p-6 md:rounded-lg md:shadow-xl">
+      <div className="w-full max-w-7xl">
         <div className="flex flex-wrap items-start gap-6">
           {/* Location Selector Group */}
           <div className="flex-1">
